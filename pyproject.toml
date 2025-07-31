@@ -9,8 +9,12 @@ authors = [
 
 license         = "MIT"               # ← string, not table
 requires-python = ">=3.10"
-dependencies = ["hydra-core"]
-
+dependencies = [
+  "hydra-core",
+  "transformers==4.43.0",
+  "datasets",
+  "pyarrow"
+]
 [tool.black]
 line-length = 88
 
