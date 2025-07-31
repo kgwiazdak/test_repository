@@ -1,0 +1,20 @@
+[project]
+name        = "ksef-vision"
+version     = "0.1.0"
+description = "KSeF Vision weekend prototype"
+
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+
+license         = "MIT"               # ← string, not table
+requires-python = ">=3.10"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.setuptools]
+packages = ["ksef_vision"]

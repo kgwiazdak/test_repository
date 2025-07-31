@@ -1,0 +1,21 @@
+name: ksef-vision
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - pytorch=2.3.*=cpu*
+  - torchvision
+  - pip
+  - pip:
+      - transformers==4.43.0
+      - datasets
+      - pydantic
+      - peft
+      - lxml
+      - python-dotenv
+      - typer
+      - pytest
+      - black
+      - isort

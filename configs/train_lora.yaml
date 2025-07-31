@@ -1,0 +1,5 @@
+num_labels: 7
+output_dir: "models/layoutlmv3_lora"
+batch_size: 2
+epochs: 1
+lora_r: 8
