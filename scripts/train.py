@@ -20,16 +20,19 @@ def check_cuda() -> None:
 @hydra.main(config_path="../configs", config_name="train_cpu", version_base=None)
 def main(cfg: DictConfig) -> None:
     check_cuda()
-    dataset = load_pl_micro()
     model, tokenizer = load_model(num_labels=cfg.num_labels)
+    dataset = load_pl_micro(tokenizer=tokenizer)
     args = TrainingArguments(
         output_dir=cfg.output_dir,
         per_device_train_batch_size=cfg.batch_size,
         num_train_epochs=cfg.epochs,
         fp16=False,
-        remove_unused_columns=False,
     )
-    trainer = Trainer(model=model, args=args, train_dataset=dataset["train"])
+    trainer = Trainer(
+        model=model,
+        args=args,
+        train_dataset=dataset["train"],
+    )
     trainer.train()
     model.save_pretrained(cfg.output_dir)
 
