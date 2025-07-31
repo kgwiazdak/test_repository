@@ -9,6 +9,7 @@ authors = [
 
 license         = "MIT"               # ← string, not table
 requires-python = ">=3.10"
+dependencies = ["hydra-core"]
 
 [tool.black]
 line-length = 88
